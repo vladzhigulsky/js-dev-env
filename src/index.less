@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+@brand-primary: #34A4D6;
+@font-family: 'Lato', Arial, Helvetica, sans-serif;
+@font-size: 1rem;
+
+@large-mobile: 30.000em;
+@tablet: 48.000em;
+@desktop: 62.000em;
+@large-desktop: 75.000em;
+
+body {
+  font-family: @font-family;
+  font-size: @font-size;
+}
+
+main {
+	padding: 2rem 1rem;
+	@media (min-width: @tablet) {
+		padding-left: 4rem;
+		padding-right: 4rem;
+	}
+	@media (min-width: @desktop) {
+		padding-left: 7rem;
+		padding-right: 7rem;
+	}
+}
+
+section {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#uploadForm {
+  label {
+    display: block;
+  }
+  [type=file] {
+
+  }
+}
