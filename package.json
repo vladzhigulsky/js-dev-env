@@ -1,14 +1,18 @@
 {
-  "name": "js-dev-env",
+  "name": "bulk-upload-tool-ui",
   "version": "1.0.0",
-  "description": "JavaScript development environment",
+  "description": "Milkround candidate bulk upload tool",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
     "start": "npm-run-all --parallel security-check open:src",
     "open:src": "babel-node buildScripts/srcServer.js",
     "security-check": "nsp check",
     "localtunnel": "lt --port 3000",
-    "share": "npm-run-all --parallel open:src localtunnel"
+    "share": "npm-run-all --parallel open:src localtunnel",
+    "clean-dist": "rimraf ./dist && mkdir dist",
+    "prebuild": "npm-run-all clean-dist",
+    "build": "babel-node buildScripts/build.js",
+    "postbuild": "babel-node buildScripts/distServer.js"
   },
   "author": "Vlad Zhigulsky",
   "license": "MIT",
